@@ -1,0 +1,11 @@
+name: This is a demo workflow for MeshMap
+on: 
+ pull_request:
+    branches: main
+ workflow_dispatch :
+   
+jobs:
+    echo:
+      runs-on: ubuntu-latest  
+      steps:
+        - run: echo "test"
