@@ -5,6 +5,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+    - name: workflow_call_code_see
+      uses: ./.github/workflows/codesee-arch-diagram.yml
     - name: "Set Up node"
       uses: actions/setup-node@v4.0.0
     - name: "Echo"
