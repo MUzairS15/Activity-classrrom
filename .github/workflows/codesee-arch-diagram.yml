@@ -26,8 +26,5 @@ jobs:
     steps:
       - id: step1
         name: Set env
-        run: echo "RESOURCE_URL=UZAIR" >> $GITHUB_ENV
-      - uses: Codesee-io/codesee-action@v2
-        with:
-          codesee-token: ${{ secrets.CODESEE_ARCH_DIAG_API_TOKEN }}
-          codesee-url: https://app.codesee.io
+        run: echo "RESOURCE_URL=UZAIR" >> $GITHUB_OUTPUT
+      
