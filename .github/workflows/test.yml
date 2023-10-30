@@ -3,7 +3,9 @@ on:
   workflow_dispatch:
 jobs:
   call_codesee:
-      uses: ./.github/workflows/codesee-arch-diagram.yml
+      uses: ./.github/workflows/meshmap.yml
+      with:
+        fileName: "manifest"
   test:
     needs: [call_codesee]
     runs-on: ubuntu-latest
