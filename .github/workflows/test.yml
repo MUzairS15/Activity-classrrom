@@ -3,6 +3,7 @@ on:
   workflow_dispatch:
 jobs:
   call_codesee:
+      secrets: inherit
       uses: ./.github/workflows/meshmap.yml
       with:
         fileName: "manifests"
