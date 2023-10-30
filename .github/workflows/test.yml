@@ -5,12 +5,13 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - name: CHeckout code
-      uses: actions/checkout@v3
-    - name: workflow_call_code_see
-      uses: ./.github/workflows/codesee-arch-diagram.yml
     - name: "Set Up node"
       uses: actions/setup-node@v4.0.0
+  call:
+    runs-on: ubuntu-latest
+    steps:
+    - name: "Call codesee"
+      uses: ./.github/workflows/codesee-arch-diagram.yml
     - name: "Echo"
       run: echo ${{ env.RESOURCE_URL }}
       
