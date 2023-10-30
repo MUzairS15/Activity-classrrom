@@ -5,7 +5,7 @@ jobs:
   call_codesee:
       uses: ./.github/workflows/meshmap.yml
       with:
-        fileName: "manifest"
+        fileName: "manifests"
   test:
     needs: [call_codesee]
     runs-on: ubuntu-latest
