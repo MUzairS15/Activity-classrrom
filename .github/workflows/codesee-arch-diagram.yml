@@ -7,6 +7,10 @@ on:
   pull_request_target:
     types: [opened, synchronize, reopened]
   workflow_call:
+    outputs:
+      resource_url:
+        description: "The URL of the generated resource."
+        value: ${{ jobs.codesee.outputs.resource_url }}
   workflow_dispatch:
 name: CodeSee
 
@@ -17,8 +21,11 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: true
     name: Analyze the repo with CodeSee
+    outputs:
+      resource_url: ${{ steps.step1.outputs.RESOURCE_URL }}
     steps:
-      - name: Set env
+      - id: step1
+        name: Set env
         run: echo "RESOURCE_URL=UZAIR" >> $GITHUB_ENV
       - uses: Codesee-io/codesee-action@v2
         with:
