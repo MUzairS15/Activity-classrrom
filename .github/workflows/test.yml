@@ -2,13 +2,17 @@ name: Setup Node.js environment
 on: 
   workflow_dispatch:
 jobs:
+  call_codesee:
+      uses: ./.github/workflows/codesee-arch-diagram.yml
   test:
+    needs: [call_codesee]
     runs-on: ubuntu-latest
     steps:
     - name: "Set Up node"
       uses: actions/setup-node@v4.0.0
+    - name: "Echo"
+      run: echo ${{RESOURCE.URL}}
   
-  call_codesee:
-      uses: ./.github/workflows/codesee-arch-diagram.yml
+
       
       
