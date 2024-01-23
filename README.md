@@ -21,7 +21,6 @@ Also the responses can be downloaded for the current session in a CSV file. Stat
 
 * Currently, MCQ questions are supported, but we can add functionality for descriptive type questions.
 
-
 * To enchance the experience, we think of adding a chat functionality with the teacher, announcements creation by teacher, which notifies student on our Android App. 
 * Recordings playback*:
 Since, lectures are recorded, teachers can upload it to our system and students can access it. 
